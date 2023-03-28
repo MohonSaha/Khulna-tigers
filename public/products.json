@@ -1,0 +1,75 @@
+[
+    {
+        "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead01",
+        "name": "Tamim Iqbal",
+        "price": 420,
+        "ratings": 5,
+        "img": "https://www.khulnatigers.net/images/team/2023/Tamim_Iqbal.png",
+        "quantity": 0
+    },
+    {
+        "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead02",
+        "name": "Yasir Ali Rabbi",
+        "price": 520,
+        "ratings": 4,
+        "img": "https://www.khulnatigers.net/images/team/2023/Yasir_Ali_Chowdhury.png",
+        "quantity": 0
+    },
+    {
+        "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead03",
+        "name": "Munim Shahriar",
+        "price": 320,
+        "ratings": 3,
+        "img": "https://www.khulnatigers.net/images/team/2023/Munim_Shahriar.png",
+        "quantity": 0
+    },
+    {
+        "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead04",
+        "name": "Mohammad Saifuddin",
+        "price": 820,
+        "ratings": 5,
+        "img": "https://www.khulnatigers.net/images/team/2023/Mohammad_Saifuddin.png",
+        "quantity": 0
+    },
+    {
+        "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead05",
+        "name": "Sabbir Rahman",
+        "price": 920,
+        "ratings": 3,
+        "img": "https://www.khulnatigers.net/images/team/2023/Sabbir_Rahman.png",
+        "quantity": 0
+    },
+    {
+        "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead06",
+        "name": "Mahmudul Hasan Joy",
+        "price": 1220,
+        "ratings": 5,
+        "img": "https://www.khulnatigers.net/images/team/2023/Mahmudul_Hasan_Joy.png",
+        "quantity": 0
+    },
+    {
+        "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead07",
+        "name": "Paul Van Meekeren",
+        "price": 620,
+        "ratings": 2,
+        "img": "https://www.khulnatigers.net/images/team/2023/Paul_van_Meekeren.png",
+        "quantity": 0
+    },
+    {
+        "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead08",
+        "name": "Azam Khan",
+        "price": 1420,
+        "ratings": 5,
+        "img": "https://www.khulnatigers.net/images/team/2023/Azam_Khan.png",
+        "quantity": 0
+    },
+    {
+        "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead09",
+        "name": "Shafiqul Islam",
+        "price": 320,
+        "ratings": 4,
+        "img": "https://www.khulnatigers.net/images/team/2023/Shafiqul_Islam.png",
+        "quantity": 0
+    }
+    
+]
