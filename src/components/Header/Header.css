@@ -1,0 +1,38 @@
+.header{
+    height: 80px;
+    background-color: #0a184b;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 70px;
+    padding-right: 70px;
+    align-items: center;
+}
+
+.header a{
+    text-decoration: none;
+    color: white;
+    margin-left: 30px;
+    font-weight: 600;
+}
+
+.header a:hover{
+    color: orange;
+}
+
+.header img{
+    width: 50px;
+}
+
+
+
+
+@media screen and (max-width:576px) {
+
+    .header{
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+
+
+
+}

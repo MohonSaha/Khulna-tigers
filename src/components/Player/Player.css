@@ -1,0 +1,72 @@
+.product{
+    width: 300px;
+    height: 580px;
+    border: 3px solid #3b3c3c;
+    border-radius: 15px;
+    padding: 4px 4px;
+    position: relative;
+}
+
+
+.product img{
+    height: 386px;
+    width: 100%;
+    padding-bottom: 4px;
+    background: #dcdcf478;
+    border-radius: 15px;
+    /* padding: 8px; */
+}
+
+.product-details{
+    margin: 10px 15px;
+    
+}
+
+.product-details p{
+    margin-top: 8px;
+    font-size: 17px;
+}
+
+.product-name{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0.0015em;
+    color: #0E161A;
+}
+
+
+.add-cart{
+    border: 3px solid #f79a48;
+    background-color: #f79a48;
+    border-radius: 0px 0px 10px 10px;
+    width: 100%;
+    padding: 15px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.add-cart:hover{
+    background-color: rgb(255, 106, 0);
+    border-top: 2px solid rgb(255, 106, 0); 
+    font-weight: 600;
+}
+
+
+
+
+
+
+@media screen and (max-width:576px) {
+
+    .product{
+        width: 70vw;
+        height: 580px;
+        border: 3px solid silver;
+        border-radius: 15px;
+        padding: 4px 4px;
+    }
+
+}
