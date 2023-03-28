@@ -1,6 +1,14 @@
 .addedPlayer{
     background-color: #0a184b;
-    padding: 8px 10px;
+    padding: 10px 10px;
     border-radius: 12px;
     color: white;
+    display: flex;
+    
+}
+
+.added-img{
+    width: 32px;
+    height: 32px;
+    margin-left: 10%;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { deleteShoppingCart } from '../../utilities/fakedb';
 import CartPlayer from '../CartPlayer/CartPlayer';
 import './Cart.css'
 
@@ -8,13 +9,17 @@ const Cart = (props) => {
 
 
     let totalPrice = 0;
-    let playerName = [];
+    let playerDetails = [];
     for(const player of cart){
         totalPrice = totalPrice + player.price;
-        playerName.push(player.name);
+        playerDetails.push(player);
     }
     const tax = totalPrice * 7 / 100;
     const grandTotal = totalPrice + tax;
+
+
+
+
 
     return (
         <div>
@@ -26,10 +31,14 @@ const Cart = (props) => {
                 <p className='grand-total'>Grand Total: ${grandTotal.toFixed(2)}</p>
 
                 {
-                    playerName.map(name => <CartPlayer
-                    name={name}
+                    playerDetails.map(player => <CartPlayer
+                    // name={name}
+                    // img={img}
+                    player = {player}
                     ></CartPlayer>)
                 }
+
+                <button className='cart-clear'>Clear Cart</button>
             </div>
         </div>
     );

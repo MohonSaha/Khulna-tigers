@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Swal from 'sweetalert2'
 import { addToDb, getShoppingCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Player from '../Player/Player';
@@ -8,30 +9,66 @@ const Shop = () => {
 
     const [players, setPlayers] = useState([]);
     const [cart, setCart] = useState([]);
-    useEffect(() =>{
+    useEffect(() => {
         fetch('products.json')
-        .then(res => res.json())
-        .then(data => setPlayers(data))
-    } ,[]);
+            .then(res => res.json())
+            .then(data => setPlayers(data))
+    }, []);
 
 
-    useEffect( () =>{
+    useEffect(() => {
         const storedCartFromStorage = getShoppingCart();
-        // console.log(storedCartFromStorage);
-        for(const id in storedCartFromStorage){
+        let savedCart = [];
+        for (const id in storedCartFromStorage) {
             const addedPlayer = players.find(player => player.id == id);
-            // console.log(addedPlayer);
+            if (addedPlayer) {
+                const quantity = storedCartFromStorage[id];
+                addedPlayer.quantity = quantity;
+                savedCart.push(addedPlayer);
+            }
+        }
+        setCart(savedCart);
+
+    }, [players])
+
+
+
+
+    const addToCart = (player) => {
+        const newCart = [...cart, player];
+        console.log(newCart.length);
+        if (newCart.length === 5) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'You have already added 5 players',
+                footer: '<a href="">Why do I have this issue?</a>'
+            })
+            return newCart;
         }
 
-    } ,[players])
+
+
+        const storedCartFromStorage = getShoppingCart();
+        for (const id in storedCartFromStorage) {
+            if (player.id === id) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'already added! Add another one.',
+                    footer: '<a href="">Why do I have this issue?</a>'
+                })
+
+                console.log('added');
+                return newCart;
+            }
+        }
 
 
 
 
-    const addToCart = (player) =>{
-        const newCart = [...cart, player];
+
         setCart(newCart);
-
         addToDb(player.id);
 
     }
@@ -41,17 +78,20 @@ const Shop = () => {
     return (
         <div className='shop-container'>
 
-            <div className="products-container">
-                {
-                    players.map(player => <Player
-                    player = {player}
-                    key = {player.id}
-                    addToCart = {addToCart}
-                    
+            <div className='product-parent'>
+                <h2 className='pandavs'>Make your team with four players</h2>
+                <div className="products-container">
+                    {
+                        players.map(player => <Player
+                            player={player}
+                            key={player.id}
+                            addToCart={addToCart}
 
-                    ></Player>)
 
-                }
+                        ></Player>)
+
+                    }
+                </div>
             </div>
             <div className="cart-container">
                 <Cart cart={cart}></Cart>

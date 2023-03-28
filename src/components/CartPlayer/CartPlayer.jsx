@@ -3,11 +3,12 @@ import './CartPlayer.css'
 
 const CartPlayer = (props) => {
 
-    const {name} = props;
+    const {name, img} = props.player;
 
     return (
         <div>
-            <p className='addedPlayer'>{name}</p>
+            <p className='addedPlayer'>{name}
+            <img className='added-img' src={img} alt="" /></p>
         </div>
     );
 };
