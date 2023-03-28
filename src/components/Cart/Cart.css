@@ -1,0 +1,11 @@
+.order-details{
+    text-align: left;
+}
+
+.order-details p{
+    margin-top: 20px;
+}
+
+.grand-total{
+    font-weight: 600;
+}

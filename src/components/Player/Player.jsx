@@ -3,6 +3,7 @@ import './Player.css'
 
 const Player = (props) => {
 
+    const addToCart = props.addToCart;
     const {name, id, img, price, ratings} = props.player;
 
     return (
@@ -13,7 +14,7 @@ const Player = (props) => {
                 <p>Price: ${price}</p>
                 <p>Rating: {ratings} stars</p>
             </div>
-            <button className='add-cart'>
+            <button onClick={() => addToCart(props.player)} className='add-cart'>
                 Add to Cart 
                 </button>
         </div>
