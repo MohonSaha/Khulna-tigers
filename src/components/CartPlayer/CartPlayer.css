@@ -1,14 +1,29 @@
 .addedPlayer{
     background-color: #0a184b;
-    padding: 10px 10px;
-    border-radius: 12px;
+    border-radius: 9px;
     color: white;
     display: flex;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     
+}
+
+.addedPlayer div{
+    margin-top: 0px;
 }
 
 .added-img{
     width: 32px;
     height: 32px;
     margin-left: 10%;
+}
+
+.delete{
+    cursor: pointer;
+}
+
+.delete:hover{
+    color:#ee3a3a;
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2'
-import { addToDb, getShoppingCart } from '../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart, removeFromDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Player from '../Player/Player';
 import './Shop.css'
@@ -9,6 +9,8 @@ const Shop = () => {
 
     const [players, setPlayers] = useState([]);
     const [cart, setCart] = useState([]);
+    const [remove, setRemove] = useState(true);
+    
     useEffect(() => {
         fetch('products.json')
             .then(res => res.json())
@@ -29,11 +31,11 @@ const Shop = () => {
         }
         setCart(savedCart);
 
-    }, [players])
+    }, [players, remove])
 
 
 
-
+// This function added player in the cart:
     const addToCart = (player) => {
         const newCart = [...cart, player];
         console.log(newCart.length);
@@ -41,13 +43,11 @@ const Shop = () => {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'You have already added 5 players',
+                text: 'You have already added 4 players',
                 footer: '<a href="">Why do I have this issue?</a>'
             })
             return newCart;
         }
-
-
 
         const storedCartFromStorage = getShoppingCart();
         for (const id in storedCartFromStorage) {
@@ -63,14 +63,22 @@ const Shop = () => {
                 return newCart;
             }
         }
-
-
-
-
-
+        console.log(newCart);
         setCart(newCart);
         addToDb(player.id);
 
+    }
+
+    //This function will clear the local storage;
+    const clearAllCart = () =>{
+        deleteShoppingCart();
+        setCart([]);
+    }
+
+    // This function will remove clicked item in the storage:
+    const removeFromCart = (id) =>{
+        removeFromDb(id);
+        setRemove(!remove);   
     }
 
 
@@ -94,7 +102,12 @@ const Shop = () => {
                 </div>
             </div>
             <div className="cart-container">
-                <Cart cart={cart}></Cart>
+                <Cart 
+                cart={cart}
+                clearAllCart={clearAllCart}
+                removeFromCart={removeFromCart}
+                
+                ></Cart>
             </div>
 
         </div>

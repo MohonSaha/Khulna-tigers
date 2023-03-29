@@ -1,22 +1,23 @@
 import React from 'react';
-import { deleteShoppingCart } from '../../utilities/fakedb';
 import CartPlayer from '../CartPlayer/CartPlayer';
-import './Cart.css'
+import './Cart.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { deleteShoppingCart } from '../../utilities/fakedb';
 
 const Cart = (props) => {
 
-    const {cart} = props;
+    const { cart } = props;
 
 
     let totalPrice = 0;
     let playerDetails = [];
-    for(const player of cart){
+    for (const player of cart) {
         totalPrice = totalPrice + player.price;
         playerDetails.push(player);
     }
     const tax = totalPrice * 7 / 100;
     const grandTotal = totalPrice + tax;
-
 
 
 
@@ -32,13 +33,13 @@ const Cart = (props) => {
 
                 {
                     playerDetails.map(player => <CartPlayer
-                    // name={name}
-                    // img={img}
-                    player = {player}
+                        player={player}
+                        removeFromCart={props.removeFromCart}
                     ></CartPlayer>)
                 }
 
-                <button className='cart-clear'>Clear Cart</button>
+                <button onClick={props.clearAllCart} className='cart-clear'>Clear Cart
+                <FontAwesomeIcon className='clear-icon' icon={faTrash} /></button>
             </div>
         </div>
     );

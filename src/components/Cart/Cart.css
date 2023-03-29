@@ -14,7 +14,21 @@
     margin-top: 20px;
     background-color: #ee3a3a;
     border: none;
-    padding: 10px 40px;
+    padding: 8px;
     border-radius: 8px;
     font-size: 18px;
+    
+    width: 100%;
+}
+
+.clear-icon{
+    margin-left: 10px;
+}
+
+@media screen and (max-width:576px) {
+
+    .cart-clear {
+        width: 100%;
+    }
+
 }
